@@ -1,0 +1,547 @@
+
+        /* base rule */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem= 10px */
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+
+}
+
+p, li, a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    color: var(--para-color);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+li {
+    list-style: none;
+} 
+
+/* theme */
+
+:root {
+    --main-color: #0062ff;
+    --supportive-color: #ebf3fe;
+    --font-color: #424242;
+    --bg-color: #ffffff;
+    --heading-color: #000a19;
+    --h-color:#0a043c;
+    --white-color: #ffffff;
+    --test: #070101;
+    --para-color: #504e4d;
+    --btn-hover-bg-color: #003b99;
+    --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+}
+
+/* layout */
+
+.container {
+    max-width: 142rem;
+    margin: 0 auto;
+    padding: 9.6rem 2.4rem;
+}
+
+
+.grid {
+    display: grid;
+
+}
+
+.grid-two--cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three--cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four--cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* module/reusable */
+
+.section-common-heading {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+
+}
+
+.section-common-subheading {
+    color: var(--heading-color);
+}
+
+.section-common--title {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin: 2.4rem 0 1.2rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3.2rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+    
+}
+
+/* state */
+
+.btn:hover {
+    background-color: var(--btn-hover-bg-color);
+    cursor: pointer;
+    box-shadow: var(--btn-box-shadow);
+}
+
+
+/* navbar section */
+
+.section-navbar {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    
+}
+
+.section-navbar .container {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 1.8rem 0;
+    
+}
+
+.section-navbar .navbar ul {
+    display: flex;
+    gap: 3.2rem;
+    /* text-transform: capitalize; */
+
+    & li a {
+        color: var(--heading-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.6rem;
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.3rem;
+            left: 0;
+            width: 0%;
+            border-bottom: 0.2rem solid blue;
+            transition: all 0.3s linear;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            -ms-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+        }
+    
+    }
+
+    & li a:hover:after {
+        width: 100%;
+    }
+
+    
+}
+
+/* End navbar section */
+
+/*** hero section ***/
+
+main {
+    position: relative;
+    background-image: linear-gradient(
+        #3d86fa,
+        #4484fb,
+        #679eff,
+        #b3d2ff,
+        #ebf3fe
+    );
+}
+
+.section-hero .grid {
+    align-items: center;
+    gap: 50rem;
+
+    & .hero-subheading {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 1.7rem;
+        word-spacing: 0.2s;
+        color: var(--btn-hover-bg-color);
+        font-weight: 700;
+ 
+    }
+
+
+    & .hero-heading {
+        font-size: 5.8rem;
+        font-family: 'Jost';
+        color: var(--btn-hover-bg-color);
+        font-weight: 900;
+    }
+
+    & .hero-para {
+        color: var(--white-color);
+        margin: 2rem 0 4rem 0;
+
+    }
+}
+
+.section-hero--image img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;  
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+}
+
+.section-hero--image img {
+    width: 90%;
+    height: auto;
+    /* transform: scale(-1); 
+    -webkit-transform: scale(-1);
+    -moz-transform: scale(-1);
+    -ms-transform: scale(-1);
+    -o-transform: scale(-1);*/
+}
+/* ------------box shadow starts here ---------- */
+
+/*.shadow {
+    width: 300px;
+    height: 300px;
+    padding: 0px;
+    background-color: rgba(174, 68, 90);
+    border-radius: 50%;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius:50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;*/
+     
+    /* box-shadow: 0  0 90px 60px pink;
+ } */
+
+/* shape devider */
+
+.custom-shape-divider-bottom-1729854759 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1729854759 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1729854759 .shape-fill {
+    fill: #ffffff;
+}
+
+/*** End hero section ***/
+
+/* about section
+
+.section-about .grid {
+    gap: 6.4rem;
+}
+
+.section-about .about-div {
+    text-align: center;
+}
+
+.section-about img {
+    padding: 2.4rem;
+    background-color: var(--supportive-color);
+    width: 15rem;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+
+
+.icon:hover > img {
+    rotate: 360deg;
+    background: linear-gradient( to right, #0575e6, #021b79);
+   
+
+ } */
+
+
+/* start about section */
+
+.section-about .para {
+    text-align: left;
+    padding-left: 315px;
+    padding-right: 445px;
+
+}
+
+.container .section-common-heading {
+    display: grid;
+    text-align: left;
+    font-size: 3.2rem;
+    text-decoration: underline;
+
+}
+
+
+
+.section-common-subheading {
+    display: grid;
+    text-align: left;
+    font-size: 1.9rem;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+}
+
+.list {
+    padding-bottom: 100px;
+}
+
+
+.section-common--title, p {
+    padding: 1.2rem 0 2.2rem 0;
+    margin: 1.9rem;
+    
+    
+}
+
+
+.section-common--heading {
+    display: grid;
+    text-align: left;
+    font-size: 3.2rem;
+    text-decoration: underline;
+}
+
+
+
+/* Course Section */
+
+.section-course .grid {
+    gap: 6.4rem;
+}
+
+.section-course .course-div:hover {
+    box-shadow: var(--btn-box-shadow);
+}
+
+.section-course .course-div {
+    text-align: center;
+    padding:2.4rem;
+    
+
+}
+
+.fa-brands {
+    padding: 2.4rem;
+    background-color: var(--supportive-color);
+    font-size: 2.4rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--btn-hover-bg-color);
+    transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+
+        &:hover {
+            color:var(--supportive-color);
+            background-color: var(--btn-hover-bg-color);
+            rotate: 360deg;
+            
+        }
+}
+
+.fa-solid {
+    padding: 2.4rem;
+    background-color: var(--supportive-color);
+    font-size: 2.4rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--btn-hover-bg-color);
+    transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+
+        &:hover {
+            color:var(--supportive-color);
+            background-color: var(--btn-hover-bg-color);
+            rotate: 360deg;
+            
+        }
+}
+
+
+/* Course Section End */
+
+
+/* **** Footer section start **** */
+
+footer {
+    background-color: #070101;
+    /* padding-top: 15rem; */
+
+
+}
+
+footer * {
+    color: white;
+}
+
+footer .grid {
+    text-align: center;
+}
+
+.footer-subheading {
+    font-size: 2.2rem;
+    font-weight: 700
+}
+
+.footer-1--div p {
+    margin: 1rem 0 3.2rem 0;
+}
+
+.footer-1--div {
+    text-align: left;
+    & .social-footer--icons {
+        display: flex;
+        gap: 1.4rem;
+    
+    & .fa-brands {
+        /* width: 5rem; */
+        /* aspect-ratio: 1; */
+        background-color: var(--supportive-color);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+
+        &:hover {
+            color:var(--supportive-color);
+            background-color: var(--btn-hover-bg-color);
+            rotate: 360deg;
+            
+        }
+    }
+}
+
+}
+
+
+.footer-1--div {
+    text-align: left;
+    & .social-footer--icons {
+        display: flex;
+        gap: 1.4rem;
+    
+    & .fa-solid {
+        /* width: 5rem; */
+        /* aspect-ratio: 1; */
+        background-color: var(--supportive-color);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+
+        &:hover {
+            color:var(--supportive-color);
+            background-color: var(--btn-hover-bg-color);
+            rotate: 360deg;
+            
+        }
+    }
+}
+
+}
+
+
+
+footer .copy{
+    text-align: center;
+}
+
+/* **** Footer section start **** */
+
